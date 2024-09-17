@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 class ATM{
     Scanner in= new Scanner(System.in);
-    float balance=0;
-    int self_pin=1234;
+    float balance=0;   //Initial Balance
+    int self_pin=1234; //User's Pin
 
+    // Function For Login By Entering Pin
     public void checkpin(){
         
         System.out.print("Enter Your Pin :-");
@@ -16,6 +17,7 @@ class ATM{
             
         }
     }
+    // Choices Available
     public void menu(){
     System.out.println("1. Deposit Money");
     System.out.println("2. Withdraw Money");
@@ -23,7 +25,7 @@ class ATM{
     System.out.println("4. Change Pin");
     System.out.println("5. Exit");
     System.out.print("Enter Your Choice :-");
-    
+
     int choice= in.nextInt();
     if(choice==1){dptMoney();}
     else if(choice==2){wtdMoney();}
@@ -32,6 +34,8 @@ class ATM{
     else if(choice==5){return;}
     else{System.out.println("Enter a valid choice");}
     }
+    
+    // Function For Money Deposition
     public void dptMoney(){
         System.out.print("Enter Amount :");
         float  amount=in.nextFloat();
@@ -40,6 +44,7 @@ class ATM{
         menu();
     }
 
+    // Function For Money Withdrawl
     public void  wtdMoney(){
         System.out.print("Enter Amount :");
         float amount= in.nextFloat();
@@ -50,11 +55,13 @@ class ATM{
         }menu();
     }
 
+    // Function For Checking Balance
     public void checkBal(){
         System.out.println("Balance = "+balance);
         menu();
     }
 
+    // Function For Changing Pin
     public void changepin(){
         System.out.print("Enter Your Pin :-");
         int pin=in.nextInt();
@@ -82,6 +89,6 @@ class ATM{
 public class ATMMachine {
     public static void main(String[] args) {
         ATM obj= new ATM();
-        obj.checkpin();
+        obj.checkpin(); 
 }
 }
