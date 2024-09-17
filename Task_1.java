@@ -53,7 +53,7 @@ class ATM{
         if(amount>balance){System.out.println("Insufficient Funds");}
         else{
             balance=balance-amount;
-            System.out.println("Money Withdrawl Successful");
+            System.out.println("Money Withdrawal Successful");
         }menu();
     }
 
